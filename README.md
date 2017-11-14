@@ -21,6 +21,8 @@ Estes comando realizam os passos na sequência:
 ## Detalhes do projeto
 Este projeto se refere a um sistema de vendas com Produtos (ou Planos) e cadastra Pagamentos referente a eles.
 
+O endereço do banco de dados foi `mongodb://localhost/casaecafe`
+
 Duas rotas foram implementadas:
 
 | Method | Rota      | Função                                                                          |
