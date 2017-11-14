@@ -1,0 +1,33 @@
+{
+  "name": "casaecafe-rest",
+  "version": "1.0.0",
+  "description": "Primeira tarefa do processo seletivo para Estagio na Casa e Cafe 2018.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "seed": "nodemon seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leobastiani/casaecafe-rest.git"
+  },
+  "keywords": [
+    "casaecafe",
+    "rest",
+    "api"
+  ],
+  "author": "Leonardo Guarnieri de Bastiani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leobastiani/casaecafe-rest/issues"
+  },
+  "homepage": "https://github.com/leobastiani/casaecafe-rest#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.2"
+  }
+}
