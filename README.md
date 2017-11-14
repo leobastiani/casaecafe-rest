@@ -22,16 +22,18 @@ Estes comando realizam os passos na sequência:
 Este projeto se refere a um sistema de vendas com Produtos (ou Planos) e cadastra Pagamentos referente a eles.
 
 Duas rotas foram implementadas:
-| Method | Rota | Função |
-| ------ | ---- | ------ |
-| GET | /plans | Recebe-se um JSON com todos os planos (produtos) cadastrados no banco de dados. |
-| POST | /payments | Pode-se cadastrar novos pagamentos. |
+
+| Method | Rota      | Função                                                                          |
+| ------ | ----      | ------                                                                          |
+| GET    | /plans    | Recebe-se um JSON com todos os planos (produtos) cadastrados no banco de dados. |
+| POST   | /payments | Pode-se cadastrar novos pagamentos.                                             |
 
 Os dados que devem estar presentes no *POST /payments* estão apresentados na tabela a seguir. Todos os dados são obrigatórios e alguns possuem restrição de tipo e de valor.
+
 | Header | Exemplo | Tipo de dado |
 | ------ | ------- | ------------ |
-| payment_date | 2017-10-3 10:10:10 | Data e hora do pagamento |
-| payment_type | cartao de credito | Tipo de pagamento, pode ser apenas os tipos: "cartao de debito", "cartao de credito", "boleto bancario", "debito online" e "cartao internacional" |
+| payment_date   | 2017-10-3 10:10:10 | Data e hora do pagamento |
+| payment_type   | cartao de credito | Tipo de pagamento, pode ser apenas os tipos: "cartao de debito", "cartao de credito", "boleto bancario", "debito online" e "cartao internacional" |
 | product        | gold_plan | Nome do produto (ou plano) referente ao pagamento. |
 | product_price  | 59.9 | Preço do produto referente ao pagamento. Deve ser igual ao preço do produto cadastrado, caso contrário, um erro é retornado. |
 | discount       | 50 | Valor inteiro do desconto em porcentagem. Deve ser correspondente ao preço pago em relação ao preço do produto cadastrado, caso contrário, um erro é retornado. O desconto não pode exceder de 50%, caso contrário, um erro é retornado. |
@@ -47,6 +49,7 @@ Caso um erro ocorra, um JSON é retornado da seguinte forma:
 ```
 
 Os possíveis erros de código estão listados a seguir:
+
 | Nome | Código |
 | ---- | ------ |
 | ERROR.FIELD_REQUIRED           | 1 |
