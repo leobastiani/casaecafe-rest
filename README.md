@@ -36,7 +36,7 @@ Os dados que devem estar presentes no *POST /payments* estão apresentados na ta
 | payment_type   | cartao de credito | Tipo de pagamento, pode ser apenas os tipos: "cartao de debito", "cartao de credito", "boleto bancario", "debito online" e "cartao internacional" |
 | product        | gold_plan | Nome do produto (ou plano) referente ao pagamento. |
 | product_price  | 59.9 | Preço do produto referente ao pagamento. Deve ser igual ao preço do produto cadastrado, caso contrário, um erro é retornado. |
-| discount       | 50 | Valor inteiro do desconto em porcentagem. Deve ser correspondente ao preço pago em relação ao preço do produto cadastrado, caso contrário, um erro é retornado. O desconto não pode exceder de 50%, caso contrário, um erro é retornado. |
+| discount       | 50 | Valor do desconto em porcentagem. Deve ser correspondente ao preço pago em relação ao preço do produto cadastrado, caso contrário, um erro é retornado. O desconto não pode ser maior do que 50%, caso contrário, um erro é retornado. |
 | price          | 29.95 | Preço pago pelo produto. Deve ser correspondente ao desconto em relação ao preço do produto cadastrado, caso contrário, um erro é retornado. |
 | transaction_id | 123 | Um possível ID de uma tabela transação que não foi implementada. |
 
