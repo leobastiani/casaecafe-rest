@@ -4,17 +4,20 @@ var Schema = mongoose.Schema;
 
 
 var ProductsSchema = new Schema({
+  /*
+  all fields are required
+   */
   product: {
     type: String,
-    required: '"product" is required.'
+    required: true
   },
   price: {
     type: String,
-    required: '"price" is required.'
+    required: true
   },
   description: {
     type: String,
-    required: '"description" is required.'
+    required: true
   }
 });
 

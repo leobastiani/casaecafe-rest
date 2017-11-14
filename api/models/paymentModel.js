@@ -3,35 +3,40 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
+
 var PaymentsSchema = new Schema({
+  /*
+  all fields are required
+   */
   payment_date: {
     type: Date,
-    required: '"payment_date" is required.'
+    required: true
   },
   payment_type: {
     type: String,
     enum: ['cartao de debito', 'cartao de credito', 'boleto bancario', 'debito online', 'cartao internacional'],
-    required: '"payment_type" is required.'
+    required: true
   },
   product: {
     type: String,
-    required: '"product" is required.'
+    required: true
   },
   product_price: {
     type: String,
-    required: '"product_price" is required.'
+    required: true
   },
   discount: {
     type: String,
-    required: '"discount" is required.'
+    required: true
   },
   price: {
     type: Number,
-    required: '"price" is required.'
+    required: true
   },
   transaction_id: {
+    // it could be another type
     type: String,
-    required: '"transaction_id" is required.'
+    required: true
   }
 });
 
