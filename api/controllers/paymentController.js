@@ -8,7 +8,7 @@ var mongoose = require('mongoose'),
 /*
 Enum of possible errors
  */
-var ERRORS = {
+var ERROR = {
   FIELD_REQUIRED: 1,
   PRODUCT_NOT_FOUND: 2,
   PRODUCT_FIELDS_NOT_MATCH: 3,
@@ -27,17 +27,17 @@ var sendError = function (res, code, msg) {
 }
 
 /*
-Send error of type ERRORS.FIELD_REQUIRED
+Send error of type ERROR.FIELD_REQUIRED
  */
 var errorFieldRequired = function (res, field) {
-  sendError(res, ERRORS.FIELD_REQUIRED, '"'+field+'" is required.');
+  sendError(res, ERROR.FIELD_REQUIRED, '"'+field+'" is required.');
 }
 
 /*
 call if i dont know what this error is
  */
 var sendUnknownError = function (res, err) {
-  res.json({error: ERRORS.UNKNOWN, msg: 'Unknown error.', err: err});
+  res.json({error: ERROR.UNKNOWN, msg: 'Unknown error.', err: err});
 }
 
 
@@ -74,14 +74,14 @@ exports.create = function(req, res) {
     // check if this product exist
     if(product == null) {
       // this product does not exist
-      sendError(res, ERRORS.PRODUCT_NOT_FOUND, 'Product "'+params['product']+'" not found.');
+      sendError(res, ERROR.PRODUCT_NOT_FOUND, 'Product "'+params['product']+'" not found.');
       return ;
     }
     
     // now, lets tests fields that must be
     // equal
     if(params['product_price'] != product['price']) {
-      sendError(res, ERRORS.PRODUCT_FIELDS_NOT_MATCH, 'Price does not match respective product.');
+      sendError(res, ERROR.PRODUCT_FIELDS_NOT_MATCH, 'Price does not match respective product.');
       return ;
     }
 
@@ -90,13 +90,13 @@ exports.create = function(req, res) {
     // maximum error of discount margin
     var maxErroDiscount = 0.01;
     if(Math.abs(discountByPrice - newPayment['discount']) > maxErroDiscount) {
-      sendError(res, ERRORS.DISCOUNT_NOT_MATCH, 'Discount does not match respective price.');
+      sendError(res, ERROR.DISCOUNT_NOT_MATCH, 'Discount does not match respective price.');
       return ;
     }
 
     // discount is up to 50%
     if(params['discount'] > 50) {
-      sendError(res, ERRORS.DISCOUNT_TOO_HIGH, 'Discount is too high.');
+      sendError(res, ERROR.DISCOUNT_TOO_HIGH, 'Discount is too high.');
       return ;
     }
 
@@ -118,13 +118,13 @@ exports.create = function(req, res) {
 
           if(error['name'] == 'CastError') {
             // wrong type, like passing a number instead of a Date
-            sendError(res, ERRORS.FIELD_WRONG_TYPE, '"'+field+'" must be '+error['kind']);
+            sendError(res, ERROR.FIELD_WRONG_TYPE, '"'+field+'" must be '+error['kind']);
             return ;
           }
 
           if(error['name'] == 'ValidatorError') {
             // a validator error, like unknown payment_type
-            sendError(res, ERRORS.VALIDATOR, error['message']);
+            sendError(res, ERROR.VALIDATOR, error['message']);
             return ;
           }
 
