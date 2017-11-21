@@ -14,6 +14,9 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/casaecafe'); 
 
 
+// public directory
+app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -23,6 +26,8 @@ var productRoutes = require('./api/routes/productRoutes'); //importing route
 productRoutes(app); //register the route
 var paymentRoutes = require('./api/routes/paymentRoutes'); //importing route
 paymentRoutes(app); //register the route
+var clientRoutes = require('./api/routes/clientRoutes'); //importing route
+clientRoutes(app); //register the route
 
 // middleware page not found
 app.use(function(req, res) {

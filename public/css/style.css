@@ -1,0 +1,18 @@
+/* footer sticky */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.carousel {
+  height: 1040px !important;
+}
+
+#plans tr {
+    cursor: pointer;
+}
