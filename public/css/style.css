@@ -9,10 +9,12 @@ main {
   flex: 1 0 auto;
 }
 
+/* carousel height to fit the content */
 .carousel {
   height: 1040px !important;
 }
 
+/* in plans table, i can click */
 #plans tr {
     cursor: pointer;
 }

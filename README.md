@@ -101,3 +101,8 @@ Retorno de requisição para `POST /payments`
     "_id": "5a0b67cab6885110603a533a"
 }
 ```
+
+## Front-end
+O front-end foi desenvolvido com o auxílio dos frameworks [jQuery](https://jquery.com) e [Materialize](http://materializecss.com). Aqui estão duas screenshots da aplicação:
+* Plans (https://i.imgur.com/VmmOF1l.png)
+* Payment (https://i.imgur.com/WQtSP4M.png)
