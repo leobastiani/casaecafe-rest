@@ -2,6 +2,8 @@
 npm-debug.log.*
 node_modules
 
+terceira-dinamica-src
+
 # Batch files
 *.bat
 
